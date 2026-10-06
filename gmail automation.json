@@ -1,0 +1,86 @@
+{
+  "name": "gmail automation",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "3599ea28-866c-49e0-a512-856205219b14",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "sendTo": "vishal.visw2006@gmail.com",
+        "subject": "Hii vishal",
+        "message": "Hii ena pandra saptiya",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        208,
+        0
+      ],
+      "id": "5f14cfc5-30c5-437f-b93d-986ec9138ae8",
+      "name": "Send a message",
+      "webhookId": "6cbb4c83-dc7c-478e-9325-000fcf64a509",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "dtfasFuTi79Anw7y",
+          "name": "Gmail account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 3,
+              "triggerAtMinute": 5
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        144,
+        144
+      ],
+      "id": "bb72214e-aca4-488d-a28c-a10d6faf37d7",
+      "name": "Schedule Trigger"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "433c4ed8-90bb-44b0-b1d1-3b4bed23f14d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0a1d4af2f020ad9ddab37cee7f3c006c50a9386d6ac59ff78a89f9feaab4d51e"
+  },
+  "id": "jKhBAnNRJgMfN75i",
+  "tags": []
+}
